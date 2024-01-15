@@ -11,6 +11,8 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@mantine/core": "^7.4.1",
+    "@mantine/hooks": "^7.4.1",
     "@remix-run/css-bundle": "^2.5.0",
     "@remix-run/node": "^2.5.0",
     "@remix-run/react": "^2.5.0",
@@ -31,6 +33,9 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.33",
+    "postcss-preset-mantine": "^1.12.3",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "^5.1.6"
   },
   "engines": {
