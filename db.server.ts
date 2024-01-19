@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-import { singleton } from "./singleton.server";
+import { singleton } from "./app/lib/singleton.server";
 
 const prisma = singleton("prisma", () => new PrismaClient());
 
