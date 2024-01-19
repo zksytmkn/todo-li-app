@@ -1,4 +1,6 @@
 import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
@@ -10,6 +12,7 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -27,6 +30,7 @@ export default function App() {
       </head>
       <body>
         <MantineProvider>
+          <Notifications position="top-right" />
           <Outlet />
           <ScrollRestoration />
           <Scripts />
