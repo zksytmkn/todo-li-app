@@ -16,7 +16,7 @@ export async function getTodos({
       progress,
     },
     orderBy: {
-      updatedAt: "desc",
+      createdAt: "desc",
     },
   });
 }
@@ -86,6 +86,23 @@ export async function deleteTodo({ id }: { id: number }) {
   return await prisma.todo.delete({
     where: {
       id,
+    },
+  });
+}
+
+export async function changeTodoBookmark({
+  id,
+  bookmark,
+}: {
+  id: number;
+  bookmark: boolean;
+}) {
+  return await prisma.todo.update({
+    where: {
+      id,
+    },
+    data: {
+      bookmark,
     },
   });
 }
