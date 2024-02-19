@@ -22,6 +22,7 @@ import {
   commitSession,
   getSession,
 } from "./lib/session.server";
+import { CommonErrorBoundary } from "./components/error-boundary";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -59,6 +60,10 @@ export default function App() {
       </body>
     </html>
   );
+}
+
+export function ErrorBoundary() {
+  return <CommonErrorBoundary />;
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {

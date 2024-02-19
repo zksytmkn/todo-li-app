@@ -4,7 +4,8 @@ import { NavLink, Outlet, useLocation , Form} from "@remix-run/react";
 import { useDisclosure } from "@mantine/hooks";
 
 import { authenticator } from "../lib/auth.server";
-import { TodosIcon, BookmarkIcon , LogoutIcon } from "../components/icons";
+import { TodosIcon, BookmarkIcon, LogoutIcon } from "../components/icons";
+import { CommonErrorBoundary } from "../components/error-boundary";
 
 export default function Todos() {
   const [opened, { toggle }] = useDisclosure();
@@ -94,6 +95,10 @@ function NavLinks() {
       ))}
     </div>
   );
+}
+
+export function ErrorBoundary() {
+  return <CommonErrorBoundary />;
 }
 
 export async function loader({ request }: LoaderFunctionArgs) {
